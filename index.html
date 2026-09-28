@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="referrer" content="no-referrer">
+    <meta name="theme-color" content="#0b0908">
+    <meta name="description" content="A small private place.">
+    <title>Things I Kept</title>
+
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/content.js" defer></script>
+    <script src="js/script.js" defer></script>
+</head>
+<body class="is-locked is-paged">
+
+    <!-- Ambient layers: light leaks, drifting dust, film grain -->
+    <div class="atmosphere" aria-hidden="true">
+        <div class="atmosphere__leak atmosphere__leak--warm"></div>
+        <div class="atmosphere__leak atmosphere__leak--cool"></div>
+        <div class="atmosphere__particles" data-particles></div>
+    </div>
+
+    <noscript>
+        <p class="noscript">This little place needs JavaScript to open.</p>
+    </noscript>
+
+    <!-- 01 · Lock screen (before midnight) ---------------------------------->
+    <section class="lock" id="lock" aria-labelledby="lock-message" hidden>
+        <div class="sky" aria-hidden="true">
+            <div class="sky__stars"></div>
+            <div class="sky__horizon"></div>
+            <div class="skyline skyline--distant" data-skyline="distant"></div>
+        </div>
+
+        <div class="lock__inner">
+            <p class="lock__found" data-from-card="early" hidden></p>
+            <h1 class="lock__message" id="lock-message" data-text="heroMessage"></h1>
+
+            <p class="lock__label" data-text="countdownLabel"></p>
+
+            <div class="countdown" role="timer" data-countdown>
+                <div class="countdown__unit">
+                    <span class="countdown__value" data-unit="days">00</span>
+                    <span class="countdown__label">Days</span>
+                </div>
+                <div class="countdown__unit">
+                    <span class="countdown__value" data-unit="hours">00</span>
+                    <span class="countdown__label">Hours</span>
+                </div>
+                <div class="countdown__unit">
+                    <span class="countdown__value" data-unit="minutes">00</span>
+                    <span class="countdown__label">Minutes</span>
+                </div>
+                <div class="countdown__unit">
+                    <span class="countdown__value" data-unit="seconds">00</span>
+                    <span class="countdown__label">Seconds</span>
+                </div>
+            </div>
+
+            <p class="lock__date" data-text="anniversaryLabel"></p>
+        </div>
+    </section>
+
+    <!-- 02 · Welcome -------------------------------------------------------->
+    <section class="welcome" id="welcome" data-page="welcome" aria-labelledby="welcome-title" hidden>
+        <div class="welcome__glow" aria-hidden="true"></div>
+        <div class="welcome__inner">
+            <p class="welcome__found" data-from-card="found" hidden></p>
+            <p class="welcome__lead" data-text="welcomeLead"></p>
+            <h1 class="welcome__title" id="welcome-title">
+                <span class="welcome__the">The</span>
+                Things I Kept
+            </h1>
+            <p class="welcome__intro" data-text="introMessage"></p>
+            <button class="button button--primary" type="button" data-action="start">
+                Start Our Story <span class="button__arrow" aria-hidden="true">→</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- The story (revealed after "Start Our Story") ------------------------>
+    <main class="story" id="story" hidden>
+
+        <section class="prologue" id="prologue" data-page="prologue" aria-label="Prologue">
+            <div class="prologue__inner" data-prologue></div>
+        </section>
+
+        <!-- 03 · Chapter selector -->
+        <section class="contents" id="contents" data-page="contents" aria-labelledby="contents-title">
+            <header class="contents__header">
+                <h2 class="contents__title" id="contents-title" data-reveal>Our Story</h2>
+                <p class="contents__subtitle" data-reveal>One month.<br>So many little things.</p>
+            </header>
+            <ol class="contents__list" data-chapter-list></ol>
+        </section>
+
+        <!-- Chapter 01 -->
+        <section class="chapter chapter--before" id="before-you" data-page="before-you" aria-labelledby="before-you-title">
+            <div class="chapter__inner" data-chapter-body="before-you"></div>
+        </section>
+
+        <!-- Chapter 02 -->
+        <section class="chapter chapter--month" id="first-month" data-page="first-month" aria-labelledby="first-month-title">
+            <div class="chapter__inner" data-chapter-body="first-month"></div>
+        </section>
+
+        <!-- Chapter 03 -->
+        <section class="chapter chapter--notice" id="things-i-notice" data-page="things-i-notice" aria-labelledby="things-i-notice-title">
+            <div class="chapter__inner" data-chapter-body="things-i-notice"></div>
+        </section>
+
+        <!-- Chapter 04 -->
+        <section class="chapter chapter--letters" id="twelve-letters" data-page="twelve-letters" aria-labelledby="twelve-letters-title">
+            <div class="chapter__inner" data-chapter-body="twelve-letters"></div>
+        </section>
+
+        <!-- Chapter 05 -->
+        <section class="chapter chapter--bouquet" id="what-you-mean" data-page="what-you-mean" aria-labelledby="what-you-mean-title">
+            <div class="chapter__inner" data-chapter-body="what-you-mean"></div>
+        </section>
+
+        <!-- Chapter 06 -->
+        <section class="chapter chapter--future" id="our-future" data-page="our-future" aria-labelledby="our-future-title">
+            <div class="chapter__inner" data-chapter-body="our-future"></div>
+        </section>
+
+        <!-- Chapter 07 -->
+        <section class="chapter chapter--hug" id="if-i-could" data-page="if-i-could" aria-labelledby="if-i-could-title">
+            <div class="chapter__inner" data-chapter-body="if-i-could"></div>
+        </section>
+
+        <!-- Final page -->
+        <section class="finale" id="finale" data-page="finale" aria-labelledby="finale-title">
+            <div class="sky" aria-hidden="true">
+                <div class="sky__stars"></div>
+                <div class="sky__horizon sky__horizon--warm"></div>
+                <div class="skyline" data-skyline="near"></div>
+            </div>
+            <div class="finale__inner" data-finale></div>
+        </section>
+
+        <!-- The physical card, echoed -->
+        <section class="keepsake" id="keepsake" data-page="finale" aria-label="The card">
+            <div class="keepsake__inner" data-keepsake></div>
+        </section>
+
+        <footer class="site-footer" data-page="finale">
+            <p>Made by hand, for one person.</p>
+        </footer>
+    </main>
+
+    <!-- Chapter progress ---------------------------------------------------->
+    <nav class="progress" aria-label="Chapters" hidden>
+        <ol class="progress__list" data-progress-list></ol>
+
+        <div class="progress__compact">
+            <button class="progress__step" type="button" data-step="-1" aria-label="Previous chapter">
+                <span aria-hidden="true">←</span>
+            </button>
+            <a class="progress__current" href="#contents" data-progress-current>Contents</a>
+            <button class="progress__step" type="button" data-step="1" aria-label="Next chapter">
+                <span aria-hidden="true">→</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Music toggle (never autoplays) -->
+    <button class="sound-toggle" type="button" aria-pressed="false" data-action="sound" hidden>
+        <svg class="sound-toggle__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2" />
+        </svg>
+        <span class="sound-toggle__label">Music</span>
+        <span class="visually-hidden" data-sound-state>off</span>
+    </button>
+
+    <!-- Letter reader -->
+    <dialog class="letter-dialog" aria-labelledby="letter-title" data-letter-dialog>
+        <div class="letter-dialog__tint" aria-hidden="true"></div>
+        <div class="letter-stage" data-letter-stage>
+            <div class="envelope-3d" aria-hidden="true">
+                <div class="envelope-3d__back"></div>
+                <div class="envelope-3d__sheet"></div>
+                <div class="envelope-3d__pocket"></div>
+                <div class="envelope-3d__flap"></div>
+                <div class="envelope-3d__seal"></div>
+            </div>
+
+            <article class="letter-paper" tabindex="-1" data-letter-paper>
+                <p class="letter-paper__eyebrow" data-letter-number></p>
+                <h3 class="letter-paper__title" id="letter-title" data-letter-title></h3>
+                <p class="letter-paper__date" data-letter-date></p>
+                <div class="letter-paper__body" data-letter-body></div>
+                <div class="letter-paper__media" data-letter-media></div>
+                <p class="letter-paper__sign" data-letter-sign></p>
+                <button class="letter-paper__fold" type="button" data-action="close-letter">
+                    Fold it back
+                </button>
+            </article>
+        </div>
+        <button class="letter-dialog__close" type="button" data-action="close-letter" aria-label="Close letter">
+            <span aria-hidden="true">×</span>
+        </button>
+    </dialog>
+
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+</body>
+</html>
